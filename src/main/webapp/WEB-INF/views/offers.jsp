@@ -15,5 +15,6 @@
     <c:forEach var="offer" items="${id_offers}" >
         <p> <c:out value="${offer}"> </c:out> </p>
     </c:forEach>
+    <a href="${pageContext.request.contextPath}/">홈으로 돌아가기</a>
 </body>
 </html>

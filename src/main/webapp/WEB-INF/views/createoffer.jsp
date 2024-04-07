@@ -42,5 +42,6 @@
         </tr>
     </table>
 </sf:form>
+<a href="${pageContext.request.contextPath}/">홈으로 돌아가기</a>
 </body>
 </html>

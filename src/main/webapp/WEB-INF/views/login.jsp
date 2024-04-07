@@ -21,8 +21,9 @@
 </head>
 <body>
 <div class="container">
+    <img src="<c:url value='/resources/images/hansungIcon.png'/>" alt="Hansung Icon" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
     <form class="form-signin" method="post" action="<c:url value="/login" />">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">로그인 해주세요</h2>
 
         <c:if test="${not empty errorMsg}">
             <div style="color: #ff0000;"> <h3> ${errorMsg} </h3></div>
@@ -43,6 +44,8 @@
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"  />
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     </form>
+    <a href="${pageContext.request.contextPath}/">홈으로 돌아가기</a>
+
 </div>
 </body>
 
