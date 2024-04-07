@@ -27,6 +27,9 @@
         <security:intercept-url pattern="/createoffer" access="permitAll()"/>
         <security:intercept-url pattern="/docreate" access="permitAll()"/>
         <security:intercept-url pattern="/resources/**" access="permitAll()"/>
+        <security:intercept-url pattern="/showcredit" access="permitAll()"/>
+        <security:intercept-url pattern="/showcourse" access="permitAll()"/>
+        <security:intercept-url pattern="/registercourse" access="permitAll()"/>
         <security:intercept-url pattern="/**" access="denyAll()"/>
 
         <security:form-login login-page="/login"/>
