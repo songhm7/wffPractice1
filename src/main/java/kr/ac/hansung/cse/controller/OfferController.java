@@ -49,7 +49,7 @@ public class OfferController {
                 System.out.println(error.getDefaultMessage());
             }
 
-            return "createoffer";
+            return "registercourse";
         }
 
         // Controller -> Service -> Dao

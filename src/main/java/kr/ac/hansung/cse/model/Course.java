@@ -5,9 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Getter
 @Setter
@@ -15,16 +13,17 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 public class Course {
 
-    @NotEmpty(message="년도는 비워둘 수 없습니다")
+    @Min(value = 1900, message="년도는 1900년 이후여야 합니다")
     private int year;
 
-    @NotEmpty(message="학기는 비워둘 수 없습니다")
+    @Min(value = 1, message="학기는 최소 1이어야 합니다")
+    @Max(value = 2, message="학기는 최대 2일 수 있습니다")
     private int semester;
 
     @NotEmpty(message="과목코드는 비워둘 수 없습니다")
     private String id;
 
-    @Size(min=2, max=100, message = "Name must be between 2 and 100 chars")
+    @NotEmpty(message="교과목명은 비워둘 수 없습니다")
     private String name;
 
     @NotEmpty(message="교과구분은 비워둘 수 없습니다")
@@ -33,6 +32,6 @@ public class Course {
     @NotEmpty(message="담당교수는 비워둘 수 없습니다")
     private String teacher;
 
-    @NotEmpty(message="학점은 비워둘 수 없습니다")
+    @Min(value = 1, message="학점은 최소 1이어야 합니다")
     private int credit;
 }

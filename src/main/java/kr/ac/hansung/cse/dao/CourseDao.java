@@ -1,6 +1,7 @@
 package kr.ac.hansung.cse.dao;
 
 import kr.ac.hansung.cse.model.Course;
+import kr.ac.hansung.cse.model.Offer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -37,4 +38,36 @@ public class CourseDao {
         });
     }
 
+    public List<Course> getPeriodCourses(int year, int semester) {
+        String sql = "SELECT * FROM courses WHERE year = ? AND semester = ?";
+        return jdbcTemplate.query(sql, new Object[]{year, semester}, new RowMapper<Course>() {
+            @Override
+            public Course mapRow(ResultSet rs, int rowNum) throws SQLException {
+                Course course = new Course();
+                course.setYear(rs.getInt("year"));
+                course.setSemester(rs.getInt("semester"));
+                course.setId(rs.getString("id"));
+                course.setName(rs.getString("name"));
+                course.setKind(rs.getString("kind"));
+                course.setTeacher(rs.getString("teacher"));
+                course.setCredit(rs.getInt("credit"));
+                return course;
+            }
+        });
+    }
+
+    // Crud method
+    public boolean insert(Course course) {
+        int year = course.getYear();
+        int semester = course.getSemester();
+        String id = course.getId();
+        String name= course.getName();
+        String kind= course.getKind();
+        String teacher= course.getTeacher();
+        int credit= course.getCredit();
+
+        String sqlStatement= "insert into courses (year, semester, id, name, kind, teacher, credit) values (?,?,?,?,?,?,?)";
+
+        return (jdbcTemplate.update(sqlStatement, new Object[] {year, semester, id, name, kind, teacher, credit}) == 1);
+    }
 }
