@@ -12,8 +12,8 @@
         </security:authentication-provider>
         <security:authentication-provider>
             <security:jdbc-user-service data-source-ref="dataSource"
-                   users-by-username-query="select username, password, enabled from users where username=?"
-                   authorities-by-username-query="select username, authority from authorities where username=?" />
+                   users-by-username-query="select username, password, enabled from users2 where username=?"
+                   authorities-by-username-query="select username, authority from authorities2 where username=?" />
         </security:authentication-provider>
     </security:authentication-manager>
 
@@ -27,7 +27,7 @@
         <security:intercept-url pattern="/createoffer" access="permitAll()"/>
         <security:intercept-url pattern="/docreate" access="permitAll()"/>
         <security:intercept-url pattern="/resources/**" access="permitAll()"/>
-        <security:intercept-url pattern="/showcredit" access="permitAll()"/>
+        <security:intercept-url pattern="/showregister" access="permitAll()"/>
         <security:intercept-url pattern="/showcourse" access="permitAll()"/>
         <security:intercept-url pattern="/registercourse" access="permitAll()"/>
         <security:intercept-url pattern="/**" access="denyAll()"/>

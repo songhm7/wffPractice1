@@ -54,9 +54,9 @@
         <a href="<c:url value='/login'/>" class="button login-logout-btn">로그인</a>
       </c:if>
     </div>
-    <p> <a href="${pageContext.request.contextPath}/showcredit"> 학점조회</a></p>
+    <p> <a href="${pageContext.request.contextPath}/showcourse"> 학점조회</a></p>
     <p> <a href="${pageContext.request.contextPath}/registercourse"> 수강신청</a></p>
-    <p> <a href="${pageContext.request.contextPath}/showcourse"> 수강신청조회</a></p>
+    <p> <a href="${pageContext.request.contextPath}/showregister"> 수강신청조회</a></p>
     <p> <a href="${pageContext.request.contextPath}/createoffer"> Create Offer</a></p>
     <p> <a href="${pageContext.request.contextPath}/offers"> Show Offer</a></p>
     <form id="logout"  action="<c:url value="/logout" />"method="post">
