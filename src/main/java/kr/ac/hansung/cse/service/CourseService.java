@@ -2,7 +2,6 @@ package kr.ac.hansung.cse.service;
 
 import kr.ac.hansung.cse.dao.CourseDao;
 import kr.ac.hansung.cse.model.Course;
-import kr.ac.hansung.cse.model.Offer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

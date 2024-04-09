@@ -3,7 +3,7 @@
 
 <html>
 <head>
-    <title>Title</title>
+    <title>수강신청</title>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/css/main.css" >
 
@@ -13,13 +13,21 @@
     <table border = "1" class="formtable">
         <tr>
             <td class="label"> 년도:</td>
-            <td><sf:input class="control" type="text" path="year"/>  <br/>
+            <td><sf:input class="control" type="text" path="year" value="2024"/>  <br/>
                 <sf:errors path="year" class="error"/>
             </td>
         </tr>
         <tr>
             <td class="label"> 학기:</td>
-            <td><sf:input class="control" type="text" path="semester"/>  <br/>
+<%--            <td><sf:input class="control" type="text" path="semester"/>  <br/>--%>
+<%--                <sf:errors path="semester" class="error"/>--%>
+<%--            </td>--%>
+            <td>
+                <sf:select class="control" path="semester">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </sf:select>
+                <br/>
                 <sf:errors path="semester" class="error"/>
             </td>
         </tr>

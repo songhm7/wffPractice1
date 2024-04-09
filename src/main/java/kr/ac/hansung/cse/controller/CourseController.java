@@ -1,7 +1,6 @@
 package kr.ac.hansung.cse.controller;
 
 import kr.ac.hansung.cse.model.Course;
-import kr.ac.hansung.cse.model.Offer;
 import kr.ac.hansung.cse.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

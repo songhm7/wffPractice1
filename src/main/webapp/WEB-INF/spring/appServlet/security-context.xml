@@ -5,11 +5,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/security https://www.springframework.org/schema/security/spring-security.xsd">
 
     <security:authentication-manager>
-        <security:authentication-provider>
-            <security:user-service>
-                <security:user name="test" authorities="ROLE_ADMIN" password="{noop}test"/>
-            </security:user-service>
-        </security:authentication-provider>
+<!--        <security:authentication-provider>-->
+<!--            <security:user-service>-->
+<!--                <security:user name="test" authorities="ROLE_ADMIN" password="{noop}test"/>-->
+<!--            </security:user-service>-->
+<!--        </security:authentication-provider>-->
         <security:authentication-provider>
             <security:jdbc-user-service data-source-ref="dataSource"
                    users-by-username-query="select username, password, enabled from users where username=?"
@@ -20,14 +20,11 @@
     <security:http auto-config="true" use-expressions="true">
         <security:intercept-url pattern="/" access="permitAll()"/>
         <security:intercept-url pattern="/login" access="permitAll()"/>
-        <security:intercept-url pattern="/offers" access="permitAll()"/>
-        <security:intercept-url pattern="/createoffer" access="permitAll()"/>
-        <security:intercept-url pattern="/docreate" access="permitAll()"/>
         <security:intercept-url pattern="/resources/**" access="permitAll()"/>
-        <security:intercept-url pattern="/showregister" access="permitAll()"/>
-        <security:intercept-url pattern="/showcourse" access="permitAll()"/>
-        <security:intercept-url pattern="/registercourse" access="permitAll()"/>
-        <security:intercept-url pattern="/doregister" access="permitAll()"/>
+        <security:intercept-url pattern="/showregister" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/showcourse" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/registercourse" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
+        <security:intercept-url pattern="/doregister" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')"/>
         <security:intercept-url pattern="/**" access="denyAll()"/>
 
         <security:form-login login-page="/login"/>

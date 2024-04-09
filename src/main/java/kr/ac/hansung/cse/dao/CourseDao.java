@@ -1,7 +1,6 @@
 package kr.ac.hansung.cse.dao;
 
 import kr.ac.hansung.cse.model.Course;
-import kr.ac.hansung.cse.model.Offer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;

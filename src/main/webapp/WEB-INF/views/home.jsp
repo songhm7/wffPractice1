@@ -57,8 +57,6 @@
     <p> <a href="${pageContext.request.contextPath}/showcourse"> 학점조회</a></p>
     <p> <a href="${pageContext.request.contextPath}/registercourse"> 수강신청</a></p>
     <p> <a href="${pageContext.request.contextPath}/showregister"> 수강신청조회</a></p>
-    <p> <a href="${pageContext.request.contextPath}/createoffer"> Create Offer</a></p>
-    <p> <a href="${pageContext.request.contextPath}/offers"> Show Offer</a></p>
     <form id="logout"  action="<c:url value="/logout" />"method="post">
       <input type="hidden" name="${_csrf.parameterName}"value="${_csrf.token}" />
     </form>
